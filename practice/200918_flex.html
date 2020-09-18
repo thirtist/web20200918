@@ -3,51 +3,150 @@
 <head>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <style>
-        .topContainer, .mainContainer, .bottomContainer {
-            box-sizing: border-box;
+        .fixed {
+            position: fixed;
+            left: 90%;
+            bottom: 10%;
+            background-color: green;
+            border: 3px dotted black;
         }
-        .topContainer {
+
+        .allcontainer {
+            display: flex;
+        }
+        .all {
+            margin: auto;
+            margin-bottom: 50px;
+            }
+        
+        .headLineContainer {
+            background-color: pink;
+            height: 120px;
+            display: flex;
+            margin: 20px 0px;
+            justify-content: center;
+            align-items: center;
+        }
+        .hh {
+
+            font-size: 30px;
+        }
+
+        .headLineContainer, .topContainer, .mainContainer, .bottomContainer {
+            box-sizing: border-box;
+            width: 1000px;
+        }
+        .topContainer, .bottomContainer {
             display: flex;
             justify-content: flex-end;
             background-color: green;
             font-size: 20px;
         }
-        .menu {
-            padding: 5px 20px;
-            color: white;
-        }
-        .menu:hover {
-            background-color: white;
-            color: blue;
+        .topContainer {
+            position: sticky;
+            top: 0;
+            /* border: 5px solid black; */
         }
         
+        
+
+                .bottomContainer {
+                    justify-content: center;
+                }
+                /* 서식유지하면서 정렬만덮어쓰기 */
+
+        .menu, .bottomContainer, .menu-item{
+            padding: 20px;
+            color: white;
+        }
+
+        .menu:hover, .menu-item:hover {
+            background-color: white;
+            color: blue;
+            
+        }
+
+        .con {
+            position: absolute;
+            display: none;
+        }
+        .con2{
+            position: relative;
+            left:-20px;
+            top:20px;
+        }
+       .menu:hover .con {
+           display: block;
+       }
+
+        .menu-item {
+            background-color: green;
+            
+        }
+        
+                
         .mainContainer {
             background-color: skyblue;
             display: flex;
         }
-        .left {
+        .leftMenu {
+            background-color: yellow;
+            padding: 20px 100px;
+            border-bottom: 1px solid black;
 
         }
         .middle {
             flex: 1;
+            margin: 20px;
 
         }
-        .right {
 
+        .right {
+            border-left: 4px  dotted black;
+            text-align: center;
+        }
+        .rightContainer{
+            position: relative;
+            top: 50%;
+            bottom: 50%;
         }
 
         .dummy {
             flex:0.5;
         }
+
     </style>
 <head>
 <body>
+    <div class="fixed">Access<br> Accepted</div>
+
+    <div class="allcontainer">
+    <div class="all">
+    <div class="headLineContainer">
+        <div class="hh">충격! 헤드라인</div>
+    </div>
     <div class="topContainer">
         <div class="menu">
-            1번
+            1번입니다
+            <div class="con">
+                <div class="con2">
+                    <div class="menu-item">Lorem, ipsum dolor.</div>
+                    <div class="menu-item">Qui, ducimus ipsam?</div>
+                    <div class="menu-item">Similique, dolorum commodi.</div>
+                    <div class="menu-item">Ex, natus laborum.</div>
+                </div>
+            </div>            
         </div>
         <div class="menu">
-            2번
+            2번임
+            <div class="con">
+                <div class="con2">
+                    <div class="menu-item">dolor.</div>
+                    <div class="menu-item">psam?</div>
+                    <div class="menu-item">um commodi.</div>
+                    <div class="menu-item">borum.</div>
+                </div>
+            </div>
         </div>
         <div class="menu">
             3번
@@ -78,20 +177,52 @@
             <div class="leftMenu">3</div>
             <div class="leftMenu">4</div>
             <div class="leftMenu">5</div>
+            <div class="leftMenu">5</div>
+            <div class="leftMenu">5</div>
+            <div class="leftMenu">5</div>
+            <div class="leftMenu">5</div>
+            <div class="leftMenu">5</div>
+            <div class="leftMenu">5</div>
+            <div class="leftMenu">5</div>
+            <div class="leftMenu">5</div>
+            <div class="leftMenu">5</div>
+            <div class="leftMenu">5</div>
+            <div class="leftMenu">5</div>
+            <div class="leftMenu">5</div>
+            <div class="leftMenu">5</div>
+            <div class="leftMenu">5</div>
+            <div class="leftMenu">5</div>
+            <div class="leftMenu">5</div>
         </div>
         <div class="middle">
-            <div class="content">가운데내용</div>
+            <div class="content">가운데내용
+                <div>요러요러하다</div>
+                <div class="fixedContent">Approved by<br> Amec.</div>
+            </div>
         </div>
         <div class="right">
-            <div class="rightContent">오른쪽내용</div>
+            <div class="rightContainer">
+                
+                <div class="rightContent">오른쪽내용이다아</div>
+                <div class="rightContent">광고모집</div>            
+                <div class="rightContent">세로정렬은</div>        
+                <div class="rightContent">포지션으로하면됨</div>        
+                <div class="rightContent">포기하면</div>        
+                <div class="rightContent">편하다 이말이야</div>        
+
+            </div>
         </div>
         
 
     </div>
 
     <div class="bottomContainer">
+        <div class="bottomContent">
+            아래내용 이게 왜
+        </div>
 
     </div>
-    
+    </div>
+    </div>
 </body>
 </html>
