@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!-- html>head>style^body>h1.mywork*2>lorem3^p#home>lorem3 -->
+<html>
+<head>
+    <title>css selector 우선적용순위</title>
+    External css를 위한 link element는 head element 바로 아래에 위치해야한다(지정자처럼 head-style element아래가 아님)
+    <link rel="stylesheet" href="200915.css.css">
+    <style>
+        /*
+        <selector우선적용순서>
+        
+        1.inline css가 최우선적용
+
+        2.internal css가 차선적용(4개)
+        -id가 우선적용
+        -class 적용
+        -element 적용
+        -* 유니버설 적용
+
+        3.external css가 나중에 적용(link element)        
+        */
+
+        #home{
+            color: blue;
+        }
+        .homework{
+            color : red;
+        }
+        p.homework{
+            color : purple;
+        }
+        h1, p{
+            color : rgb(11, 162, 221);
+        }        
+        p{
+            color : rgb(27, 25, 167);
+        }
+        *{
+            color : green
+        }
+    </style>
+</head>
+<body>
+    <h1 id="home" style="color:black">선택자)id attribute를 사용했지만, inline css가 우선적용된다</h1>
+    <h1 class="homework" id="home">선택자)class보다 id가 우선적용된다</h1>
+    <p class="homework">선택자)elemnet와 class를 동시충족해야하는 조건</p>
+    <h1 class="homework">선택자)element보다 class가 우선적용</h1>
+    <h1>선택자)element그룹(h1,p)적용(h1)</h1>
+    <p>선택자)element그룹(h1,p)적용이지만 후에 p를 다시 선택자적용시켜 구체성이 똑같아 나중에 입력한 값이 적용됐다(P)</p>
+    <h2>선택자)다른 지정자가 없어서 유니버설이 적용되었다<br />
+        External css로 불러왔기 때문에 이 html의 head-style에서 유니버설을 지정하지 않았다면 External로 적용 될 것이다
+    </h2>
+</body>
+</html>

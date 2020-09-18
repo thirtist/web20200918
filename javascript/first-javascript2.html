@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <style>
+        div {
+            margin: 10px;
+        }
+        #demo3 {
+            display: none;
+        }
+    </style>
+<head>
+<body>
+    <button onclick="document.getElementById('myImage').src='pic_bulbon.gif'">Turn On</button>
+    <button  onclick="document.getElementById('myImage').src='pic_bulboff.gif'">Turn off</button>
+    <img src="pic_bulboff.gif" id="myImage" alt="">
+    <div>
+    <br>
+    </div>
+    <div>
+        <button onclick="document.getElementById('demo').style.fontSize = '35px'">클릭하면커집니다</button>
+        <div id="demo">클릭하면 커지는글자</div>
+    </div>
+    <div>
+        <button onclick="document.getElementById('demo2').style.display = 'none';">클릭하면없어집니다</button>
+        <div id="demo2">클릭하면 없어지는 글자</div>
+    </div>
+    <div>
+        <button onclick="document.getElementById('demo3').style.display = 'block';">클릭하면나옵니다</button>
+        <div id="demo3">클릭하면 나오는 글자</div>
+    </div>
+</body>
+</html>

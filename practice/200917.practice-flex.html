@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <style>
+        #mainLayout {
+            width: 800px;
+            margin:0 auto;
+        }
+        #topTable {
+            background-color:green;
+            height:100px;
+            position: relative;
+        }
+
+            .topTableContainer {
+              /* 자체를 움직이거나 차지하는것 */
+              position: absolute;
+              left: 10px;
+              width: 80%;
+              bottom:20px;
+              /* absolute는 부모에게서 위치를물려받아서 relative가 됨 */
+              /* 넓이80%,left쪽이랑 bottom쪽여백10px 넓이는 80%차지*/              
+              
+              /* 자식아이템들을 일단 가로정렬 시키고 세부정렬 시키는 것 */
+              display: flex;
+              justify-content:center;
+              align-items:flex-start;
+              /* display:flex로 안에 내용들을 일단 가로정렬시킴 */
+              /* (display:flex후에)부모위치에서 아이템들을 세부적으로 가로정렬시키는것 */
+              /* (display:flex후에)부모위치에서 아이템들을 세부적으로 세로정렬시키는것 */
+           
+              /* 자식에서쓰는건 flex-grow-쉬링크-base인데 그로우랑 베이스만씀
+              그로우는 차지하는 면적퍼센트(0~1) 쉬링크는 그냥0 베이스는 기본auto에 0으로하면 기존 무시하고 적용됨 */
+              /* ex flex:1 0 0 */
+              background-color: rgb(15, 223, 153);
+              
+            }
+            .topTableContent, .extra {
+                /* 두개 클래스에 모두 적용
+                .class1 .class2 (자손셀렉터)띄어쓰기하면 .class2이후의 자손도 모두적용
+                .class1>.class2 (자식셀렉터)>하면 딱 .class2까지만 물려받음
+                .class1+.class2 (형제셀렉터)+하면 직전 같은라인것을 물려받음(이후에 같은라인에
+                새로운엘레먼트가나오면 다음부터는 물려받지않음) */
+                /* 자식셀렉터만 지정했지만 자손까지 물려받는 경우도있다(컬러프로퍼티) */
+                color: white;
+                font-size: 15px;
+                padding: 5px;
+
+            }
+            .dummy {
+                flex:0.5;
+                /* 자식에서 flex를 적용한 예(부모가이미 display:flex를 적용) */
+                /* 더미를 중간에 만들어서 내용을 안넣어서 빈공간차지하는 비율을 설정했다 */
+            }
+            .topTableContent:hover {
+                /* link,visited,hover,active의 pseudo class */
+                color: red;
+                background-color: white;
+            }
+            .extra:hover {
+                display: none;
+                /* display:flex말고도 안보이게하는것도있음 */
+            }
+            .sticky {
+                color:blue;
+                border: 2px solid black;
+                
+                margin-left: 300px;
+                position: sticky;
+                top: 20px;
+                /* 포지션fixed나 sticky absolute는 문단에서나와서적용됨
+                꼭 위치지정을 알맞게하기(top left right bottom) */
+            }
+            .sticky2 {
+                position: sticky;
+                top: 20px;
+            }
+            .sticky3 {
+                position: sticky;
+                top: 40px;
+            }
+            .sticky4 {
+                position: sticky;
+                top: 60px;
+            }
+
+            [style] {
+
+            }
+   
+        #leftTable {
+            background-color:pink;
+            float:left;
+            height:2000px;
+            width:20%;
+
+        }
+        #rightTable {
+            background-color:yellow;
+            float:right;
+            height: 2000px;
+            width: 80%;
+        }
+        #bottomTable {
+            background-color:red;
+            clear:both;
+            height: 100px;
+            
+        }
+
+        h1 {
+            margin-top: 1200px;
+        }
+    </style>
+<head>
+<body>
+    <div id="mainLayout">
+        <div id="topTable">상단 테이블 구역
+            <div class="topTableContainer">상단 테이블 컨테이너
+                <div class="topTableContent">1번</div>
+                <div class="topTableContent">2번</div>
+                <div class="topTableContent">3번</div>
+                <div class="topTableContent">4번</div>
+                <div class="topTableContent">5번</div>
+                <div class="dummy"></div>
+                <div class="topTableContent, extra">.마우스올려두면사라짐</div>
+                
+            </div>
+        </div>
+        <div id="leftTable">좌측 테이블</div>
+        <div id="rightTable">우측 테이블
+            <span class="sticky">sticky적용</span>
+            <br>
+            <br>
+            <span>스<span class="sticky2">크</span>롤을 내리면</span>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div>암&nbsp&nbsp호가 생길겁니다</div>
+            <br>
+            <br>
+            <div class="sticky3">한번 해보십쇼</div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div>아무리 띄어쓰기 안된다고     하더라도</div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <span>정말로</span><span class="sticky4">진짜</span><span>일지도</span>
+            <h1>시공의 폭풍은 언제나 최고야!!</h1>
+            <p>♚♚히어로즈 오브 더 스☆톰♚♚가입시$$전원 카드팩☜☜뒷면100%증정※ ♜월드오브 워크래프트♜펫 무료증정￥ 특정조건 §§디아블로3§§★공허의유산★초상화♜오버워치♜겐지스킨￥획득기회@@@ 즉시이동http://kr.battle.net/heroes/ko/</p>
+
+        </div>
+        <div id="bottomTable">하단 테이블</div>
+
+        <div style="">
+        </div>
+        
+        
+    </div>
+</body>
+</html>

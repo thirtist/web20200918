@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+      .div1 {
+        color:blue;
+        border: 1px solid black;
+      }
+      .div1>p {
+        color:red;
+        border: 1px solid black;
+      }
+
+
+
+      .h1 {
+        color: blue;
+        border: 1px solid black;
+      }
+      .h1>div{
+        color: green;
+        border: 1px solid black;
+      }
+    </style>
+<head>
+<body>
+    <div class="div1">
+      p엘레먼트(div1클래스)
+        <p>p에 감싸여있는 div엘레먼트</p>
+    </div>
+
+
+<br><br><br>
+
+
+    <h1 class="h1">
+      h1(h1클래스 블루)
+      <div>h1>div 자식지정자->그린&보더:정상작동
+        <div>h1>div>div 자손이지만 컬러만상속받음보더안받음</div>
+      </div>
+      <p>h1>p p도 자손이지만 h1지정자로 컬러는 상속받았음</p>
+    </h1>
+
+
+    </body>
+
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!-- html>head>style^body>h1^h6>p.home#work*3 -->
+<!-- 주석단축키는 컨트롤+/ -->
+
+<html>
+<head>
+    <title>head아래에 E~title을 쓰면 웹페이지 제목이다</title>
+    <!-- E~title은 글로벌 A~title로도 쓰인다(툴팁바역할-마우스올리면나옴) -->
+    <link rel="stylesheet" href="">
+    <!-- E~head 아래에 있는 E~link는 css를 외부에서 불러오는 External css 역할을 한다 -->
+    <style>
+        /*css주석은 이렇게쓴다*/
+        h1{
+            color:blue
+        }
+        
+        h2{
+            color:black        
+        }
+        h3{
+            color:red
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Element</h1>
+    <p>Element는 &lt;시작태그&gt;컨탠트(내용)&lt;종료태그&gt;로 이루어져있다</p>
+    <p>이 중에서 종료태그가 없는 img,br같은 empty element도 존재한다(XHTML에서는 시작태그안에 /를 사용해서 종료시켜줘야함)</p>
+    <p>컨탠트(내용)에 특수기호를 써야되는 경우 html entity를 구글에 검색해라(&lt;&gt; 이거 같은거) </p>
+
+    <h2>block element와 inline element</h2>
+    <p>block element는 줄을 모두 차지하고 inline element는 줄을 차지하지 않아 줄바꿈이 일어나지 않는다<br>h1등은 블록이고 p랑 a는 인라인 엘레먼트이다</p>
+
+    <h2>attribute는 알맞는 element와 사용해야 한다</h2>
+    <a href="200914.html.jpg">그림링크</a>
+    <p>A~href는 E~a와 함께 써야 작동한다(E~h1에 A~herf넣으면 동작안함-w3schools에서 레퍼런스를 참고하자)</p>
+
+    <h3>주요 Element</h3>
+    <p>br - 줄바꿈,empty element</p>
+    <p>pre - html에서 작성한대로 띄어쓰기 줄바꿈을 무시하지 않고 그대로 구현</p>
+    <p>head 내의 style - css에서 다루는 내용이며 선택자(id,class,E~)를 활용한다</p>
+
+    <h1>Attribute</h1>
+    <p>Element를 세부적으로 나타내는 속성이며, Attribute이름="proverty"으로 이루어져있다</p>
+    <p>Property와 Value를 가지며, ="property:value";형식으로 묶여있다(ex style="color: blue;")</p>
+    
+    <h2>style attribute</h2>
+    <p>inline css로써 element옆에 삽입하여 사용한다(이 때는 적용 우선순위가 selector(선택자) id보다 높음)</p>
+    <p>style은 css에서 자세히 다루기에 head부분에서 style element로도 활용된다(외부 css는 head부분에서 link element를 사용)</p>
+    
+    <h3>주요 attribute</h3>
+    <p>title - 툴팁(마우스가져가대면나오는설명) - 글로벌 attribute로 모든 element랑 사용가능</p>
+
+    <h1>Property:Value</h1>
+    <p>=":"로 묶여있는 것 주의</p>
+
+    <h2>Color property</h2>
+    <p>Color의 value는 rgb(255,255,255,0-마지막이건 투명도)로 지정</p>
+    
+
+    
+</body>
+<h6>
+    <p class="home" id="work"></p>
+    <p class="home" id="work"></p>
+    <p class="home" id="work"></p>
+</h6>
+</html>
