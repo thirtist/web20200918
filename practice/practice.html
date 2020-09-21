@@ -1,48 +1,85 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <style>
-      .div1 {
-        color:blue;
-        border: 1px solid black;
-      }
-      .div1>p {
-        color:red;
-        border: 1px solid black;
-      }
-
-
-
-      .h1 {
-        color: blue;
-        border: 1px solid black;
-      }
-      .h1>div{
-        color: green;
-        border: 1px solid black;
-      }
     </style>
 <head>
 <body>
-    <div class="div1">
-      p엘레먼트(div1클래스)
-        <p>p에 감싸여있는 div엘레먼트</p>
-    </div>
+    <input id="input1" type="text"><br>
+    <input id="input2" type="text"><br>
+    <button onclick="displayAdd()"><i class="fas fa-plus"></i></button>
+    <p id="result1"></p>
+
+    <hr>
+
+    <input type="text" id="input3">
+    <br>
+    <input type="text" id="input4">
+    <br>
+    <button onclick="displaySub()"><i class="fas fa-minus"></i></button>
+    <p id="result2"></p>
+
+    <hr>
+    <input type="text" id="input5">
+    <br>
+    <input type="text" id="input6">
+    <br>
+    <button onclick="displayMuti()"><i class="fas fa-times"></i></button>
+    <p id="result3"></p>
+
+    <hr>
+    <input type="text" id="input7"><br>
+    <input type="text" id="input8"><br>
+    <button onclick="displayDivide()"><i class="fas fa-divide"></i></button>
+    <p id="result4"></p>
+
+    <script>
+        function displaySub() {
+            var n1 = document.getElementById("input3").value;
+            var n2 = document.getElementById("input4").value;
+
+            var result = sub(n1, n2);
+            document.getElementById("result2").innerHTML = result;
+        }
+        function sub(a, b) {
+            return a-b;
+        }
 
 
-<br><br><br>
+        function displayMuti() {
+            var n1 = document.getElementById("input5").value;
+            var n2 = document.getElementById("input6").value;
 
+            var result = Muti(n1, n2);
+            document.getElementById("result3").innerHTML = result;
+        }
+        function Muti(a, b) {
+            return a * b;
+        }
 
-    <h1 class="h1">
-      h1(h1클래스 블루)
-      <div>h1>div 자식지정자->그린&보더:정상작동
-        <div>h1>div>div 자손이지만 컬러만상속받음보더안받음</div>
-      </div>
-      <p>h1>p p도 자손이지만 h1지정자로 컬러는 상속받았음</p>
-    </h1>
+        function displayDivide() {
+            var n1 = document.getElementById("input7").value;
+            var n2 = document.getElementById("input8").value;
 
+            var result = Divide(n1, n2);
+            document.getElementById("result4").innerHTML = result;
+        }
+        function Divide(a, b) {
+            return a / b;
+        }
 
-    </body>
+        function add(a, b) {
+                return a +b;
+            }
+        function displayAdd() {
+            var n1 = document.getElementById("input1").value;
+            var n2 = document.getElementById("input2").value;
 
-
+            var result = add(Number(n1), Number(n2));
+            document.getElementById("result1").innerHTML = result;
+            
+        }
+    </script>
+</body>
 </html>
