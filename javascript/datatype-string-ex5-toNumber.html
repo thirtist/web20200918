@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+    </style>
+<head>
+<body>
+    <script>
+        var a = "5";
+        var c = "6";
+        console.log(a + c) //더하기만 string 유지로 56 출력됨
+
+        var d = Number(a);
+        var e = Number(c);
+        console.log(d + e);
+
+        var f = ""+d;  //string으로 변경할 때
+        
+        var g = "3.14";
+        console.log(Number(g)); //string을 실수로 변환
+        console.log(parseFloat(g)); // "
+        console.log(parseInt(g)); // string을 소수점을 버리고 반환
+
+    </script>
+</body>
+</html>
