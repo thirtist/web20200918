@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <style>
+    </style>
+<head>
+<body>
+    <input type="text" id="input1">
+    <br>
+    <button onclick="vote()">나이 입력?</button>
+    <p id="result"></p>
+    <script>
+        function vote() {
+            var age = document.getElementById("input1").value;
+            age = Number(age);
+
+            if (age >= 18 ) {
+                document.getElementById("result").innerHTML = "성인";
+            } else if (age >=7) {
+                document.getElementById("result").innerHTML = "아동";
+            } else {
+                document.getElementById("result").innerHTML = "유아";
+            }
+
+        }
+    </script>
+</body>
+</html>
