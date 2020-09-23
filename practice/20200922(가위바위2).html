@@ -34,7 +34,7 @@
          document.getElementById("result").innerHTML = "가위바위보게임"
         
         function find() {
-            return document.getElementById("result").innerHTML
+            return document.getElementById("result").innerHTML;
         }
 
         function changeColor() {
@@ -64,26 +64,29 @@
             else if (a == 1 && r == 2) {
             document.getElementById("result").innerHTML = "당신이 졌습니다";
             }
-            else if (a == 1 && r == 3) {
-            document.getElementById("result").innerHTML = "비겼습니다";
-            }
+            // else if (a == 1 && r == 3) {
+            // document.getElementById("result").innerHTML = "비겼습니다";
+            // }
             else if (a == 2 && r == 1) {
             document.getElementById("result").innerHTML = "당신이 졌습니다";
             }
-            else if (a == 2 && r == 2) {
-            document.getElementById("result").innerHTML = "비겼습니다";
-            }
+            // else if (a == 2 && r == 2) {
+            // document.getElementById("result").innerHTML = "비겼습니다";
+            // }
             else if (a == 2 && r == 3) {
             document.getElementById("result").innerHTML = "당신이 이겼습니다";
             }
-            else if (a == 3 && r == 1) {
-            document.getElementById("result").innerHTML = "비겼습니다";
-            }
+            // else if (a == 3 && r == 1) {
+            // document.getElementById("result").innerHTML = "비겼습니다";
+            // }
             else if (a == 3 && r == 2) {
             document.getElementById("result").innerHTML = "당신이 이겼습니다";
             }
-            else {
+            else if (a == 3 && r == 3) {
             document.getElementById("result").innerHTML = "당신이 졌습니다";
+            }
+            else {
+            document.getElementById("result").innerHTML = "비겼습니다";
             }
 
 

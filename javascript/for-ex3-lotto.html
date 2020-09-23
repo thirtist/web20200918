@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <style>
+        #result {
+            display: flex;
+        }
+        .num {
+            background-color: black;
+            color: white;
+            border-radius : 50%;
+
+            line-height: 100px;
+            width: 100px;
+            text-align: center;
+            font-size: 50px;
+        }
+
+    </style>
+<head>
+<body>
+    <button onclick="lotto()">로또 번호 출력</button>
+    <div id="result"></div>
+    <script>
+        function lotto() {
+            var numbers = ""; //초기화 안하면 undefined나옴
+
+            // <div>3</div><div>2</div><div>2</div> 이런식으로 6개
+            for (var i = 0; i <6; i++) {
+                var randomNumber = Math.floor(Math.random()*45)+1;
+
+            //컬러 만드는거 시작
+                var color;
+                if (randomNumber >= 40){
+                    color = "background-color: yellow;";
+                }
+                else if (randomNumber > 30){
+                    color = "background-color: green;"
+                }
+                else if (randomNumber > 20){
+                    color = "background-color: red;"
+                }
+                else if (randomNumber > 10){
+                    color = "background-color: pink;"
+                }
+                else {
+                    color = "background-color: blue;"
+                }
+                //컬러 만드는거 끝
+
+                numbers += "<div class='num' style='" + color + "'>" + randomNumber + "</div>";
+            }
+            console.log(numbers);
+
+            document.getElementById('result').innerHTML = numbers;
+
+            // function get() {
+            //     return document.getElementById('num2').innerHTML;
+            // }
+
+            // if (get(i) >= 40){
+            //     return document.getElementById('num2').style = "background-color: yellow;"
+            // }
+            // else if (get() > 30){
+            //     return document.getElementById('num2').style = "background-color: green;"
+            // }
+            // else if (get() > 20){
+            //     return document.getElementById('num2').style = "background-color: red;"
+            // }
+            // else if (get() > 10){
+            //     return document.getElementById('num2').style = "background-color: pink;"
+            // }
+            // else {
+            //     return document.getElementById('num2').style = "background-color: blue;"
+            // }
+
+        }
+    </script>
+</body>
+</html>

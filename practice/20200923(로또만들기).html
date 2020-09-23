@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <style>
+        #number {
+            display: flex;
+        }
+
+
+        .num {
+            border-radius: 50px;
+            background-color: black;
+            border: 1px solid black;
+            color: white;
+            line-height: 100px;
+            width: 100px;
+            text-align: center;
+            margin: 10px;
+            font-size: 50px;
+
+        }
+    </style>
+<head>
+<body>
+    <button onclick="make()">로또 만들기</button>
+    <div id="number">
+        
+    </div>
+
+    <script>
+        function make() {
+            
+
+            var text ="";
+            for (i=0; i<6; i++){
+                var randomNumber = Math.floor(Math.random()*45)+1;
+
+                var mcolor;
+                if (randomNumber >= 40){
+                    mcolor = "background-color: yellow";
+                }
+                else if (randomNumber > 30){
+                    mcolor = "background-color: green";
+                }
+                else if (randomNumber > 20){
+                    mcolor = "background-color: red";
+                }
+                else if (randomNumber > 10){
+                    mcolor = "background-color: pink";
+                }
+                else {
+                    mcolor = "background-color: blue";
+                }
+
+                text += "<div class='num' style='" + mcolor + "'>" + randomNumber + "</div>";
+                
+            }
+
+
+            document.getElementById("number").innerHTML = text;
+        console.log(text);
+        }
+        
+    </script>
+</body>
+</html>

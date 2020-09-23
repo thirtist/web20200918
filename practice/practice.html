@@ -7,18 +7,24 @@
 <head>
 <body>
 
-    <p id="p1">안녕하세요</p>
+    <div id="result"></div>
 
     <script>
+        var txt = "";
 
-        
+        for (i=2; i<=9; i++) {
+            for (j=1; j<=9; j++) {
+                txt += i + " &times " + j + " = " + i * j + "<br>";
+                if (j == 9) {
+                    txt += "<hr>";
+                }
+            }
 
-        function a ()
-        {
-            return document.getElementById("p1").innerHTML;
+        document.getElementById("result").innerHTML = txt;
+
         }
 
-        console.log(a());
+
     </script>
 </body>
 </html>

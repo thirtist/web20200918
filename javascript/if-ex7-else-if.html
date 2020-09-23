@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <style>
+    </style>
+<head>
+<body>
+    <button onclick="rpsGame(3)"><i class="fas fa-hand-rock"></i></button>
+    <button onclick="rpsGame(2)"><i class="fas fa-hand-paper"></i></button>
+    <button onclick="rpsGame(1)"><i class="fa fa-hand-scissors"></i></button>
+    <br>
+    <img src="" id="com">
+    
+    <p id="result"></p>
+    <script>
+        
+
+        function rpsGame(user) {
+
+            console.log(user);
+            //user 입력이 잘 들어오는지 확인
+
+            var computer = Math.floor(Math.random()*3) +1;
+            var fileName = "rps" + computer + ".png";
+            // 1:가위, 2:보, 3:바위
+
+            document.getElementById("com").src = fileName;
+            
+            var result;
+
+            if (computer == user) {
+                result = "비겼습니다.";
+            } else if (computer == 1 && user == 3) {
+                result = "이겼습니다.";
+            } else if (computer == 2 && user == 1) {
+                result = "이겼습니다.";
+            } else if (computer == 3 && user == 2) {
+                result = "이겼습니다.";
+            } else {
+                result = "졌습니다.";
+            }
+            
+            document.getElementById("result").innerHTML = result;
+            changeColor();
+            
+        }
+        function getHtml() {
+            return document.getElementById("result").innerHTML;
+        }
+        console.log(getHtml());
+
+        function changeColor() {
+            if (getHtml() == "비겼습니다.") {
+                document.getElementById("result").style = "color : green";
+            }
+            else if (getHtml() == "이겼습니다.") {
+                document.getElementById("result").style = "color : blue";
+            }
+            else {
+                document.getElementById("result").style = "color : red";
+            }
+        }
+        
+    </script>
+</body>
+</html>
