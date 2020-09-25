@@ -6,23 +6,37 @@
     </style>
 <head>
 <body>
-
-    <div id="result"></div>
-
     <script>
-        var txt = "";
+        
+        
 
-        for (i=2; i<=9; i++) {
-            for (j=1; j<=9; j++) {
-                txt += i + " &times " + j + " = " + i * j + "<br>";
-                if (j == 9) {
-                    txt += "<hr>";
-                }
-            }
-
-        document.getElementById("result").innerHTML = txt;
-
+        var arr = [];
+        
+        for (i = 0; i < 4; i++) {
+            arr.push(i);
         }
+
+        console.log("--개수--");
+        console.log(arr.length);
+
+        console.log("--넣은 것 출력--");
+        for (i = 0; i < arr.length; i++) {
+            console.log(arr[i]);
+        }
+
+        // var arr = [1, 2, 3, 4];
+
+        arr.pop();
+
+        console.log("--마지막 제거 후 개수는--");
+        console.log(arr.length);
+
+        console.log("--마지막 제거 후 출력--");
+        for (i = 0; i < arr.length; i++) {
+            console.log(arr[i]);
+        }
+
+        
 
 
     </script>

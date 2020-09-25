@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <style>
+    </style>
+<head>
+<body>
+    <button id="button1">로또 번호 만들기</button>
+    <div id="result"></div>
+    <script>
+
+        // document.getElementById("button1").onclick = show;
+        document.getElementById("button1").addEventListener("click", show);
+        // 위랑 아래랑 같지만 addEventListener 안쪽 이벤트는 on빼고
+        // 따옴표로 묶어야한다 // 그리고 함수를 쓸때는 이름만 써야한다
+
+        function show(){
+            var array1 =[];
+            
+            while(array1.length < 6){
+                var random = Math.floor(Math.random()*45)+1;
+                // 랜덤을 계속 반복해서 만들어야해서
+                // while안에 넣어야함 (while로 반복할때마다
+                // 랜덤이 생기게) 아니면 그냥 1숫자랜덤
+                // 나온게 고정으로 같은숫자라서 계속 못넣음
+                if (!array1.includes(random))
+                {
+                array1.push(random);
+                }
+            }
+            // 출력 test
+            // for (i = 0; i <array1.length; i++){
+            //     console.log(array1[i]);
+            // }
+
+            
+            var text = "";
+            var color         
+
+            for (var i = 0; i<array1.length; i++){
+                
+                text += "<div 'style = backgournd-color :" + color + " '>" + array1[i] + "</div>"
+
+            }
+
+            
+            console.log(text);
+            document.getElementById("result").innerHTML = text;
+        
+       
+        }
+
+
+    </script>
+</body>
+</html>

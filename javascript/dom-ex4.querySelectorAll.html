@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <style>
+    </style>
+<head>
+<body>
+    <h1 class="note" id="head1">Lorem.</h1>
+    <h1 class="note error" id="head2">Dignissimos.</h1>
+    <h1 class="note error" id="head3">Eos?</h1>
+    <h1 id="head4">Itaque!</h1>
+    <h1 id="head5">Recusandae!</h1>
+    
+    <script>
+        var heads = document.querySelectorAll("h1");
+        console.log(heads.length);
+    
+        var notes = document.querySelectorAll(".note");
+        console.log(notes.length);
+
+        var ne = document.querySelectorAll(".note.error");
+        console.log(ne.length);
+
+        for (var i = 0; i < ne.length; i++){
+            ne[i].innerHTML = "HELLO";
+        }
+
+        //이후연습
+        // document.h1s.head1.style.color = "red";
+        // h1s는 없네? forms는 있던데
+        // w3스쿨에서 js html dom -> dom document항목에서
+        // Finding HTML Objects에 되는것들만 나와있음
+        // ex) document.images
+        // 만들어져있는게 정해져있음
+
+    </script>
+
+</body>
+</html>

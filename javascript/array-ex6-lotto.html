@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <style>
+    </style>
+<head>
+<body>
+    <button onclick="lotto()">로또 번호</button>
+    <div id="result"></div>
+
+    <script>
+        function lotto() {
+            var numbers = [];
+
+            while (numbers.length < 6){
+                var newNumber = Math.floor(Math.random()*45)+1;
+                if (!numbers.includes(newNumber)){
+                    numbers.push(newNumber);
+                }
+            }
+            // 3번째
+            // while문으로 바꿔서 6개가 될때까지 넣도록함
+
+
+            // 2번째 발상 .includes로 새로생성된수가 numbers
+            // 에 들어가 있는지 확인하면서 만듦
+            // -> 이거는 중복값나오면 i가 6개가 출력 안될수도있음
+            // for (var i =0; i< 6; i++){
+            //     var newNumber = Math.floor(Math.random()*45)+1;
+            //     if (!numbers.includes(newNumber)){
+            //         numbers.push(newNumber);
+            //     }
+            
+
+            // 1번째 발상 -> numbers배열에 6개를 랜덤으로 넣음
+            // numbers.push(Math.floor(Math.random()*45)+1);
+            
+
+            var txt = "";
+            for (var i=0; i < numbers.length; i++){
+                txt += "<div>" + numbers[i] + "</div>";
+            }
+            //numbers.length 수만큼 반복
+            //number배열에있는 수를 가져와서 div를 하나씩만들어서
+            //txt에 +=으로 담음
+
+            document.getElementById("result").innerHTML = txt;
+        }
+    </script>
+</body>
+</html>

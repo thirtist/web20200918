@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #n{
+            display: flex;
+        }
+        #result {
+           display: flex; 
+        }
+        .lo{
+
+            background-color: black;
+            color: white;
+            border-radius: 50%;
+            font-size: 30px;
+            line-height: 70px;
+            width: 70px;
+            text-align: center;
+            margin: 5px;
+
+
+        }
+
+    </style>
+</head>
+<body>
+    <div>로또-중복없이랜덤생성/오름차순정렬/숫자구간별로색출력/몇개맞는지확인하기</div><br>
+    <div>당첨번호</div>
+    <div id="n">
+        <div id="a0"class="lo">1</div>
+        <div id="a1"class="lo">11</div>
+        <div id="a2"class="lo">21</div>
+        <div id="a3"class="lo">23</div>
+        <div id="a4"class="lo">35</div>
+        <div id="a5"class="lo">41</div>
+    </div>
+    <button id="button1">로또 생성</button>
+    <div id="result"></div>
+    <span id="result2"></span><span> 개 일치합니다</span>
+    
+</body>
+    <script>
+        function show(){
+            
+            var arr = [];
+
+            while (arr.length < 6) {
+                var randomN = Math.floor(Math.random()*45)+1;
+                if (!arr.includes(randomN)) {
+                    arr.push(randomN)
+                }
+
+            }
+ 
+            arr = arr.sort(function(a, b){return a-b});
+
+            // console.log(arr);
+            // 작동확인ok
+
+            
+            var txt =""
+            for (i = 0; i<arr.length; i++){
+                
+                //컬러 조건 만들기//
+                var colorA =""
+                
+                if (arr[i] > 39){
+                    colorA="blue";
+                }
+                else if (arr[i] > 29){
+                    colorA="pink";
+                }
+                else if (arr[i] > 19){
+                    colorA="green";
+                }
+                else if (arr[i]>9){
+                    colorA="grey";
+                }
+                else {
+                    colorA="red";
+                };
+                //컬러 조건 만들기 끝//
+                
+                txt += "<div class='lo' style=' background-color : " + colorA +  "'>" + arr[i] + "</div>"
+            }    
+            //일치개수확인
+            var arrM = [];
+            for (i=0; i<6; i++){
+                var N = document.getElementById("a"+i).innerHTML;
+                arrM.push(i);
+            }
+            
+            var numb = 0
+            for (i=0; i<6; i++){
+                if (arrM.includes(arr[i])){
+                    numb += 1;
+                }
+            }
+            //일치개수확인끝
+
+            document.getElementById("result").innerHTML = txt;
+            // console.log(txt); 체크
+
+            //일치개수출력
+            document.getElementById("result2").innerHTML = numb;
+            //
+        }
+        // document.getElementById("button1").addEventListener("click",show);
+        // 아래와 같은 의미, 자바스크립트에서는 함수명만 쓰고 ()는 생략;
+        document.getElementById("button1").onclick = show;
+
+        function asdf(){}
+            console.log();
+    </script>
+</html>

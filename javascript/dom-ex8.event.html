@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <style>
+    </style>
+<head>
+<body>
+    <h1 onclick="console.log('hello')" id="head1">Lorem.</h1>
+    <h1 onclick="show()"id="head2">Lorem, ipsum.</h1>
+    <h1 id="head3">Lorem, ipsum dolor.</h1>
+    <h1 id="head4">Lorem, ipsum</h1>
+
+
+    <script>
+        var h4 = document.getElementById("head4");
+        h4.addEventListener("click", show);
+        
+        function show() {
+            for (var i = 0; i<3; i++){
+                console.log(i);
+            }
+        }
+
+        var h3 = document.getElementById("head3");
+
+        h3.onclick = show;
+
+        //이벤트를 실행할 때 -> 함수이름을 할당하면됨
+        //show()하면 안됨
+        
+        console.log(show);
+        //함수 이름만 출력해보면 그 함수문 자체가 나오는걸
+        //알 수 있음 (자바스크립트만 이럼)
+
+
+
+    </script>
+</body>
+</html>

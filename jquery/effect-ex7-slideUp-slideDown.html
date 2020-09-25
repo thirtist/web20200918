@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        #con2 {
+            display: none;
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+
+            $("#d1").click(function(){
+                $("#con1").slideUp();
+            });
+
+            $("#d2").click(function(){
+                $("#con2").slideDown();
+            });
+                
+        
+
+
+        });
+    </script>
+<head>
+<body>
+
+    <div id="d1">누르면 숨겨짐
+        <div class="con" id="con1">내용1</div>
+    </div>
+    <div id="d2">누르면 나옴
+        <div class="con" id="con2"> 내용2</div>
+    </div>
+
+</body>
+</html>

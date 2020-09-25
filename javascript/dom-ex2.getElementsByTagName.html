@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <style>
+    </style>
+<head>
+<body>
+    <h1 id="head1">Lorem, ipsum dolor.</h1>
+    <h1 id="head2">Iure, quia doloribus?</h1>
+    <h1 id="head3">Sapiente, illum doloribus.</h1>
+    <h1 id="head4">Nam, numquam qui.</h1>
+    <h1 id="head5">Molestiae, labore ullam?</h1>
+    <script>
+        var head1 = document.getElementById("head1");
+        var heads = document.getElementsByTagName("h1");
+
+        console.log(heads.length);
+
+        for (var i = 0; i < heads.length; i++){
+            console.log(heads[i].innerHTML);
+        }
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+    </style>
+<head>
+<body>
+    <!-- h1*3#head$>lorem1^p*2#para$>lorem -->
+    <h1 id="head1">Lorem.</h1>
+    <h1 id="head2">Quaerat!</h1>
+    <h1 class="show" id="head3">Expedita.</h1>
+    <p id="para1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque, nulla sapiente pariatur amet facere aliquid iure harum assumenda repellendus sed perspiciatis eos voluptatibus perferendis tenetur ab itaque, culpa dolores at.</p>
+    <p class="show" id="para2">Ducimus quia dolorem expedita architecto itaque vel voluptas ipsa facilis labore earum voluptates, recusandae aliquid! Totam id maxime consectetur temporibus tempore dolores similique. Veniam ducimus mollitia optio vel ab quas.</p>
+    <script>
+        function hide(){
+            $(".show").hide();
+        }
+
+        $("#para2").hide();
+        $(".show").hide();
+        $(".show").show([20000]);
+
+    </script>
+</body>
+</html>

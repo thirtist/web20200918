@@ -12,11 +12,16 @@
             color: "black",
             description: function(){
                 console.log(this.name + "," + this.color);
+            },
+            description2: function(){
+                console.log(name + "," + color);
             }
         }
         car.description();
         car.color = "white";
         car.description();
+        car.description2(); // 바로 그 오브젝트의 패러미터를 못가져옴
+                            // this.으로 해야함
     </script>
 </body>
 </html>
