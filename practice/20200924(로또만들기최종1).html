@@ -50,14 +50,14 @@
                 if (!arr.includes(randomN)) {
                     arr.push(randomN)
                 }
-
+                
             }
- 
+            
             arr = arr.sort(function(a, b){return a-b});
-
+            
             // console.log(arr);
             // 작동확인ok
-
+            
             
             var txt =""
             for (i = 0; i<arr.length; i++){
@@ -84,23 +84,28 @@
                 
                 txt += "<div class='lo' style=' background-color : " + colorA +  "'>" + arr[i] + "</div>"
             }    
-            //일치개수확인
+            
+            document.getElementById("result").innerHTML = txt;
+            // console.log(txt); 체크
+            
+            
+            //정답을일단 arrM에 넣음
             var arrM = [];
             for (i=0; i<6; i++){
-                var N = document.getElementById("a"+i).innerHTML;
-                arrM.push(i);
+                a = document.getElementById("a"+i).innerHTML
+                a = Number(a);
+                arrM.push(a);
             }
+            console.log(arrM);
+            // 잘들어옴
             
             var numb = 0
             for (i=0; i<6; i++){
                 if (arrM.includes(arr[i])){
                     numb += 1;
                 }
-            }
-            //일치개수확인끝
-
-            document.getElementById("result").innerHTML = txt;
-            // console.log(txt); 체크
+            };
+            console.log(arr);
 
             //일치개수출력
             document.getElementById("result2").innerHTML = numb;
@@ -110,7 +115,5 @@
         // 아래와 같은 의미, 자바스크립트에서는 함수명만 쓰고 ()는 생략;
         document.getElementById("button1").onclick = show;
 
-        function asdf(){}
-            console.log();
     </script>
 </html>
