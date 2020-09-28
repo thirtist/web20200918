@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+    </style>
+    <script>
+        $(document).ready(function() {
+            $("#btn1").click(function(){
+            var txt = $("#input1").val();
+            
+            var li = $("<li />");
+            li.text(txt);
+
+            $("#result").append(li);
+
+            //li 눌렀을 때 사라지는거 - 이거를 안쪽에
+            $("li").click(function(){
+                $(this).remove();
+            });
+            //집어넣어야함(왜냐면 li를 정의한 곳에 있어야함-변수)
+            
+                        
+
+            });
+
+            $("#btn2").click(function() {
+                $("#result").empty();
+            });
+
+            $("#btn3").click(function() {
+                $("li:last-child").remove();
+            });
+        });
+    </script>
+<head>
+<body>
+    <input type="text" id="input1">
+    <button id="btn1"><i class="fas fa-plus"></i></button>
+    <button id="btn2"><i class="fas fa-trash"></i></button>
+    <button id="btn3"><i class="fas fa-trash"></i></button>
+    <ul id="result"></ul>
+</body>
+</html>
